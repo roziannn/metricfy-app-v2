@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { authClient } from "@/lib/auth-client";
 import { UserDropdown } from "./UserDropdown";
 import Link from "next/link";
+import { IconMathFunction } from "@tabler/icons-react";
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -22,7 +23,8 @@ export function Navbar() {
     >
       <div className="container flex min-h-16 items-center mx-auto px-4 md:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2 mr-4">
-          <span className="font-bold">Metricfy.</span>
+          <IconMathFunction className="!size-7" />
+          <span className="font-bold">Metricfy</span>
         </Link>
 
         {/* desktop navigation */}

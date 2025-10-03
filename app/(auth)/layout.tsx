@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
+import { IconMathFunction } from "@tabler/icons-react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -19,10 +20,11 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Link
           className="flex items-center gap-2 self-center
-        font-semibold"
+        font-semibold text-lg"
           href="/"
         >
-          Metricfy-v2.
+          <IconMathFunction className="!size-7" />
+          Metricfy
         </Link>
         {children}
         <div className="text-balance text-center text-xs text-muted-foreground">
