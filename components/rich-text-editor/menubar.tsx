@@ -6,15 +6,19 @@ import {
   AlignLeft,
   AlignRight,
   Bold,
-  BoldIcon,
+  Code2,
   Heading1,
   Heading2,
   Heading3,
+  Highlighter,
   Italic,
   ListIcon,
   ListOrdered,
   Redo,
   Strikethrough,
+  Subscript,
+  Superscript,
+  Underline,
   Undo,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -72,6 +76,73 @@ export function Menubar({ editor }: iAppProps) {
             </TooltipTrigger>
             <TooltipContent>Strike</TooltipContent>
           </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Toggle
+                size="sm"
+                pressed={editor.isActive("underline")}
+                onPressedChange={() => editor.chain().focus().toggleUnderline().run()}
+                className={cn(editor.isActive("underline") && "bg-muted text-muted-foreground")}
+              >
+                <Underline />
+              </Toggle>
+            </TooltipTrigger>
+            <TooltipContent>Underline</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Toggle
+                size="sm"
+                pressed={editor.isActive("subscript")}
+                onPressedChange={() => editor.chain().focus().toggleSubscript().run()}
+                className={cn(editor.isActive("subscript") && "bg-muted text-muted-foreground")}
+              >
+                <Subscript />
+              </Toggle>
+            </TooltipTrigger>
+            <TooltipContent>Subscript</TooltipContent>
+          </Tooltip>
+          <Tooltip></Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Toggle
+                size="sm"
+                pressed={editor.isActive("superscript")}
+                onPressedChange={() => editor.chain().focus().toggleSuperscript().run()}
+                className={cn(editor.isActive("superscript") && "bg-muted text-muted-foreground")}
+              >
+                <Superscript />
+              </Toggle>
+            </TooltipTrigger>
+            <TooltipContent>Superscript</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Toggle
+                size="sm"
+                pressed={editor.isActive("highlight")}
+                onPressedChange={() => editor.chain().focus().toggleHighlight().run()}
+                className={cn(editor.isActive("highlight") && "bg-muted text-muted-foreground")}
+              >
+                <Highlighter />
+              </Toggle>
+            </TooltipTrigger>
+            <TooltipContent>Highlight</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Toggle
+                size="sm"
+                pressed={editor.isActive("code")}
+                onPressedChange={() => editor.chain().focus().toggleCode().run()}
+                className={cn(editor.isActive("code") && "bg-muted text-muted-foreground")}
+              >
+                <Code2 />
+              </Toggle>
+            </TooltipTrigger>
+            <TooltipContent>Code</TooltipContent>
+          </Tooltip>
+          <div className="w-px h-6 bg-border mx-2"></div>
           <Tooltip>
             <TooltipTrigger asChild>
               <Toggle

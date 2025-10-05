@@ -1,13 +1,21 @@
 "use client";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { Menubar } from "./menubar";
 import TextAlign from "@tiptap/extension-text-align";
+import Subscript from "@tiptap/extension-subscript";
+import Superscript from "@tiptap/extension-superscript";
+import Highlight from "@tiptap/extension-highlight";
+import Code from "@tiptap/extension-code";
+import { Menubar } from "./menubar";
 
 export function RichTextEditor({ field }: { field: any }) {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Subscript,
+      Superscript,
+      Code,
+      Highlight.configure({ multicolor: true }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
