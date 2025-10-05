@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  IconDashboard,
-  IconDotsVertical,
-  IconListDetails,
-  IconLogout,
-} from "@tabler/icons-react";
+import { IconDashboard, IconDotsVertical, IconListDetails, IconLogout } from "@tabler/icons-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -17,12 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
-} from "@/components/ui/sidebar";
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@/components/ui/sidebar";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { Home } from "lucide-react";
@@ -47,10 +37,7 @@ export function NavUser() {
             >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage
-                  src={
-                    session?.user.image ??
-                    `https://avatar.vercel.sh/${session?.user.email}`
-                  }
+                  src={session?.user.image ?? `https://avatar.vercel.sh/${session?.user.email}`}
                   alt={session?.user.name}
                 />
                 <AvatarFallback className="rounded-lg">
@@ -65,9 +52,7 @@ export function NavUser() {
                     ? session?.user.name
                     : session?.user.email.split("@")[0]}
                 </span>
-                <span className="text-muted-foreground truncate text-xs">
-                  {session?.user.email}
-                </span>
+                <span className="text-muted-foreground truncate text-xs">{session?.user.email}</span>
               </div>
               <IconDotsVertical className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -82,10 +67,7 @@ export function NavUser() {
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage
-                    src={
-                      session?.user.image ??
-                      `https://avatar.vercel.sh/${session?.user.email}`
-                    }
+                    src={session?.user.image ?? `https://avatar.vercel.sh/${session?.user.email}`}
                     alt={session?.user.name}
                   />
                   <AvatarFallback className="rounded-lg">
@@ -100,9 +82,7 @@ export function NavUser() {
                       ? session?.user.name
                       : session?.user.email.split("@")[0]}
                   </span>
-                  <span className="text-muted-foreground truncate text-xs">
-                    {session?.user.email}
-                  </span>
+                  <span className="text-muted-foreground truncate text-xs">{session?.user.email}</span>
                 </div>
               </div>
             </DropdownMenuLabel>

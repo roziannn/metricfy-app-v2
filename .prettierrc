@@ -1,3 +1,4 @@
 {
-  "jsxWhitespaceSensitivity": "ignore"
+  "jsxWhitespaceSensitivity": "ignore",
+  "printWidth": 120
 }
