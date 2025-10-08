@@ -14,6 +14,7 @@ import slugify from "slugify";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 import { SelectValue } from "@radix-ui/react-select";
 import { RichTextEditor } from "@/components/rich-text-editor/editor";
+import { Uploader } from "@/components/file-uploader/uploader";
 
 export default function CourseCreationPage() {
   const form = useForm<CourseSchemaType>({
@@ -110,7 +111,6 @@ export default function CourseCreationPage() {
                   <FormItem className="w-full">
                     <FormLabel>Description</FormLabel>
                     <FormControl>
-                      {/* <Textarea placeholder="Description" className="min-h-[120]" {...field} /> */}
                       <RichTextEditor field={field} />
                     </FormControl>
                     <FormMessage />
@@ -124,7 +124,8 @@ export default function CourseCreationPage() {
                   <FormItem className="w-full">
                     <FormLabel>Thumbnail Image</FormLabel>
                     <FormControl>
-                      <Input placeholder="Thumbnail url" {...field} />
+                      <Uploader />
+                      {/* <Input placeholder="Thumbnail url" {...field} /> */}
                     </FormControl>
                     <FormMessage />
                   </FormItem>
