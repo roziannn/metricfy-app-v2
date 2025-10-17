@@ -18,8 +18,12 @@ export async function adminGetCourses() {
       price: true,
       fileKey: true,
       slug: true,
+      category: true,
     },
   });
 
   return data;
 }
+
+// untk sbg interface nantinya dynamic sesuai yg diselect diatas
+export type AdminCourseType = Awaited<ReturnType<typeof adminGetCourses>>[0];
